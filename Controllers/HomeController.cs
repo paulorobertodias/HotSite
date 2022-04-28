@@ -37,6 +37,5 @@ namespace Hotsite.Controllers
             ViewBag.Mensagem = "Cadastro Realizado com Sucesso.";
             return View("Index",cad);   
         }
-
     }
 }
