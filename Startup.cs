@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -49,7 +45,6 @@ namespace Hotsite
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-
             LogFac.AddFile("Logs/Log-{Date}.txt",LogLevel.Warning);
         }
     }
