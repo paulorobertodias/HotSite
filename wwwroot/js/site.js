@@ -16,7 +16,6 @@ function fecharDicas(){
     document.getElementById('popup_dicas').style.display =  'none';
 }
 
-
 function abrirApoio(){
     document.getElementById('popup_apoio').style.display = 'block';
 }
