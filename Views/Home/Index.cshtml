@@ -3,41 +3,143 @@
     ViewData["Title"] = "Hotsite";
 }
 
-<div>
-    <h1>Iniciativa Saúde da Cidade</h1>
-    <p>
-        Texto sobre vida saudável: Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.
-    </p>
-    <p>
-        Texto sobre vida iniciativa: Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.
-    </p>
+<div class="row">
+    <div class="col-md-5 Texto" style="">
+        <section>
+            <h1>Iniciativa Saúde da Cidade</h1>
+            <hr>
+            <p>
+                Texto sobre vida saudável: Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae
+                hendrerit.
+            </p>
+            <p>
+                Texto sobre vida iniciativa: Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae
+                hendrerit.
+            </p>
+        </section>
+    </div>
+
+
+    <div class="col-md-7 Imagem" style="">
+        <section>
+            <img src="~/imagens/Praca.jpg" class="img-fluid mb-4" />
+        </section>
+    </div>
 </div>
 
-<div>
-    <h2>Entre em contato!:</h2>
-    <p>Nos mande uma mensagem e fique por dentro de nossos eventos</p>
+<div class="row">
+    <!--destaque principal-->
 
-    <form action="/Home/Cadastrar" method="POST">
-        <div>
-            <label asp-for="Nome">Nome:</label>
-            <input asp-for="Nome" />
+    <div class="col-md-5 text-center Formulario">
+       <h2>Entre em contato!:</h2>
+        <p>Nos mande uma mensagem e fique por dentro de nossos eventos</p>
+
+        <form action="/Home/Cadastrar" method="POST" id="FormCadastro">
+            <div class="Form-group">
+                <label asp-for="Nome">Nome:</label>
+                <input asp-for="Nome" />
+            </div>
+            <div class="Form-group">
+                <label asp-for="Email">Email:</label>
+                <input asp-for="Email" />
+            </div>
+            <div class="Form-group">
+                <label asp-for="Mensagem">Mensagem (opcional):</label>
+                <textarea asp-for="Mensagem"></textarea>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-success Enviar" value="Enviar">Enviar</button>
+                <!--<input type="submit" value="Enviar" />
+                <input type="submit" value="Enviar" />-->
+            </div>
+            <div>
+                 @ViewBag.Mensagem
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-7 text-center Imagens3">
+        <div class="fig4">
+            <img src="~/Imagens/Agendas.png" class="img-fluid" />
+            <a href="javascript: abrirAgenda();">Agenda de Eventos</a><br>
+		  
+            <div id="popup_agenda" class="popup_agenda" onclick='fecharAgenda()'>
+			    <h3>Agenda</h3>
+                <p>10/10/10 10:10 - Evento 1</p>
+                <p>Lorem Ipsum dolor sit ammet et</p>
+                <p>delectus accommodare his</p>
+                <p>consul copiosae</p>
+                <p></p>
+                <p>10/10/10 10:10 - Evento 1</p>
+                <p>Lorem Ipsum dolor sit ammet et</p>
+                <p>delectus accommodare his</p>
+                <p>consul copiosae</p>
+                <p></p>
+                <p>10/10/10 10:10 - Evento 1</p>
+                <p>Lorem Ipsum dolor sit ammet et</p>
+                <p>delectus accommodare his</p>
+                <p>consul copiosae</p>
+		    </div>
+<!--            <a href="#">Agenda de eventos</a>-->
         </div>
-        <div>
-            <label asp-for="Email">Email:</label>
-            <input asp-for="Email" />
+        <div class="fig5">
+            <img src="~/Imagens/Dicas.png" class="img-fluid" />
+
+
+<!--        <a href="javascript: abrir();">Abrir Pop-up</a><br>
+		    <a href="javascript: fechar();">Fechar Pop-up</a><br>-->
+            <a href="javascript: abrirDicas();">Dicas de vida Saudável</a><br>
+
+            <div id="popup_dicas" class="popup_dicas" onclick='fecharDicas()'>
+			    <h3>Dicas de Vida Saudável</h3><br>  
+                <p>Lorem Ipsum dolor sit ammet et</p>
+                <p>delectus accommodare his consul</p>
+                <p>copiosae legendos at vix a putent</p>
+                <p>delectus delicata usu. Vidit dissentiet</p>
+                <p>eos</p><br>            
+                <p></p>
+                <p>Lorem Ipsum dolor sit ammet et</p>
+                <p>delectus accommodare his consul</p>
+                <p>copiosae legendos at vix a putent</p>
+                <p>delectus delicata usu. Vidit dissentiet</p>
+                <p>eos</p><br>
+                <p></p>
+                <p>Lorem Ipsum dolor sit ammet et</p>
+                <p>delectus accommodare his consul</p>
+                <p>copiosae legendos at vix a putent</p>
+                <p>delectus delicata usu. Vidit dissentiet</p>
+                <p>eos</p> 
+		    </div>
+<!--            <a href="#">Dicas de vida saudável</a>-->
+
         </div>
-        <div>
-            <label asp-for="Mensagem">Mensagem (opcional):</label>
-            <textarea asp-for="Mensagem"></textarea>
+        <div class="fig6">
+            <img src="~/Imagens/Apoiadores.png" class="img-fluid" />
+            <a href="javascript: abrirApoio();">Apoiadores</a><br>
+
+            <div id="popup_apoio" class="popup_apoio" onclick='fecharApoio()'>
+			    <h3>Apoiadores</h3><br>  
+                <img src="~/Imagens/Apoiador1.jpg" class="img-fluid"/>
+                <p>Empresa 1 </p>
+                <p>Descrição </p>
+
+                <img src="~/Imagens/Apoiador2.jpg" class="img-fluid"/>
+                <p>Empresa 2 </p>
+                <p>Descrição </p>
+
+                <p></p><img src="~/Imagens/Apoiador3.jpg" class="img-fluid"/>
+                <p>Empresa 3 </p>
+                <p>Descrição </p>
+
+                <p></p><img src="~/Imagens/Apoiador4.png" class="img-fluid"/>
+                <p>Empresa 4 </p>
+                <p>Descrição </p>
+		    </div>
+<!--            <a href="#">Apoiadores</a>-->
         </div>
-        <div>
-            <input type="submit" value="Enviar" />
-        </div>
-    </form>
+    </div>
 </div>
 
-<div>
-    <a href="#">Agenda de eventos</a>
-    <a href="#">Dicas de vida saudável</a>
-    <a href="#">Apoiadores</a>
-</div>
+

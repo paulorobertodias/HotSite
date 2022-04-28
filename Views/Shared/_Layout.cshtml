@@ -3,26 +3,28 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Hotsite</title>
+    <title>@ViewData["Title"] - Hot_Site</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
+    <header class="bg-white border-bottom box-shadow mb-3 text-center">
         <nav>
            <h1>Hotsite</h1>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <main role="main" class="container-fuid">
             @RenderBody()
-        </main>
-    </div>
-
+    </main>
+    
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - Hotsite
+            &copy; 2022 - Hot_Site
         </div>
     </footer>
-
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
