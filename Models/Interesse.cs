@@ -8,13 +8,13 @@ namespace Hotsite.Models
     {
         public int Id { get; set; }
 
-        [StringLength(156)]
+        [StringLength(50)]
         public string Nome { get; set; }
 
-        [StringLength(156)]
+        [StringLength(80)]
         public string Email { get; set; }
 
-        [StringLength(512)]
+        [StringLength(320)]
         public string Mensagem { get; set; }
     }
 }
